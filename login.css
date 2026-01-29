@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main container */
+.container {
+    width: 900px;
+    height: 500px;
+    background: white;
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* Left section */
+.left {
+    width: 45%;
+    background: linear-gradient(135deg, #7b4dff, #f7a7a7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.left h1 {
+    color: white;
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+/* Right section */
+.right {
+    width: 55%;
+    padding: 50px;
+}
+
+.right h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* Form */
+form label {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    
+}
+
+form input:focus {
+    border-color: #7b4dff;
+}
+
+/* Options */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 25px;
+
+}
+
+.options a {
+    color: #7b4dff;
+    text-decoration: none;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+.options input{
+    position: relative;
+    left: 500px;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #7b4dff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #643be6;
+}
+
+/* Signup */
+.signup {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.signup a {
+    color: #7b4dff;
+    text-decoration: none;
+}
+
+/* line */
+.line {
+    display: flex;
+    /* align-items: left; */
+    /* margin-bottom: 25px; */
+    left: 15px;
+}
+
+.line>label{
+    display: flex;
+    
+}
+.l1{
+    width: 20px;
+
+}
+.line a{
+    text-decoration: none;
+    display: flex;
+    color: #7b4dff;
+    font-size: 13px;
+    margin-left: 150px;
+}
+.line a:hover{
+    color: #643be6; 
+    text-decoration: underline;
+}
