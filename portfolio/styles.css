@@ -89,19 +89,87 @@ h2 {
 }
 
 .skill-badge {
-    background: #667eea;
-    color: white;
+    background: #eef2ff;
+    color: #1f2937;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 6px;
     text-align: center;
-    font-weight: 500;
-    transition: transform 0.3s ease;
+    font-weight: 600;
+    transition: transform 0.35s ease;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    --level: 0;
 }
 
 .skill-badge:hover {
     transform: scale(1.1) rotate(5deg);
 }
+
+.skill-badge::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: calc(var(--level) * 1%);
+    background: linear-gradient(90deg, #667eea 0%, #9f7aea 100%);
+    z-index: 0;
+    transition: width 0.9s cubic-bezier(.2,.9,.2,1);
+}
+
+.skill-badge {
+    z-index: 1;
+}
+
+/* Typed hero text */
+.typed {
+    display: inline-block;
+    margin-top: 12px;
+    color: rgba(255,255,255,0.95);
+    font-weight: 500;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid rgba(255,255,255,0.75);
+    width: 0ch;
+    animation: typing 3s steps(30,end) 0.4s forwards, blink 700ms steps(1,end) infinite;
+}
+
+@keyframes typing {
+    from { width: 0ch; }
+    to { width: 28ch; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Project reveal with optional delay */
+.project {
+    opacity: 0;
+    transform: translateY(18px);
+}
+.project.revealed {
+    animation: fadeInUp 0.6s cubic-bezier(.2,.9,.2,1) forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+/* Nav underline microinteraction */
+nav a {
+    position: relative;
+}
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    bottom: -6px;
+    height: 3px;
+    width: 60%;
+    background: #667eea;
+    transition: transform 0.35s ease;
+}
+nav a:hover::after { transform: translateX(-50%) scaleX(1); }
 
 footer {
     background: #333;
