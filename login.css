@@ -7,10 +7,12 @@
 
 body {
     height: 100vh;
-    background: #f2f2f2;
+    /* background: #cc2121; */
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("https://t3.ftcdn.net/jpg/07/08/66/90/240_F_708669070_rSlWWFX0nF8PZl63yrfNWT2ou6FD5NjS.webp");
+    background-size: cover;
 }
 
 /* Main container */
@@ -26,7 +28,7 @@ body {
 
 /* Left section */
 .left {
-    width: 45%;
+    width: 51%;
     background: linear-gradient(135deg, #7b4dff, #f7a7a7);
     display: flex;
     align-items: center;
@@ -39,13 +41,15 @@ body {
     font-size: 48px;
     line-height: 1.2;
 }
-.left h4 {
+.left h3 {
     color: white;
     font-size: 24px;
     margin-top: 20px;
-    position: relative;
+    line-height: 1.2;
+    /* position: relative;
     top: 70px;
     right: 170px;
+    display: inline-flex; */
     
 }
 
