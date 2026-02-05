@@ -39,6 +39,15 @@ body {
     font-size: 48px;
     line-height: 1.2;
 }
+.left h4 {
+    color: white;
+    font-size: 24px;
+    margin-top: 20px;
+    position: relative;
+    top: 70px;
+    right: 170px;
+    
+}
 
 /* Right section */
 .right {
