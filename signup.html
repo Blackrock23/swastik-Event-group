@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Register</title>
     <link rel="stylesheet" href="./login.css">
 </head>
 <body>
@@ -21,12 +21,12 @@
         <h2>Register</h2>
         <p class="subtitle">Welcome back! Please Sign up for New account</p>
 
-        <form>
+        <form id="signup-form">
             <label>Username</label>
-            <input type="email" placeholder="username@gmail.com" required>
+            <input type="email" name="email" placeholder="username@gmail.com" required>
 
             <label>Password</label>
-            <input type="password" placeholder="****" required>
+            <input type="password" name="password" placeholder="****" required>
 
             
             <div class="line">
@@ -35,12 +35,13 @@
                 
             </div>
 
-            <button type="submit" >Register</button>
+            <button type="submit" id="signup-btn">Register</button>
         </form>
 
         <p class="signup">
             Already have an account? <a href="login.html">Login</a>
     </div>
 </div>
+<script src="./login.js"></script>
 </body>
 </html>

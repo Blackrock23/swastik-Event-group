@@ -19,12 +19,12 @@
         <h2>Login</h2>
         <p class="subtitle">Welcome back! Please login to your account</p>
 
-        <form>
+        <form id="login-form">
             <label>Username</label>
-            <input type="email" placeholder="username@gmail.com" required>
+            <input type="email" name="email" placeholder="username@gmail.com" required>
 
             <label>Password</label>
-            <input type="password" placeholder="****" required>
+            <input type="password" name="password" placeholder="****" required>
 
             <!-- <div class="options">
                 <label class="remember">
@@ -38,13 +38,14 @@
                 <a href="http://">Forget Password</a>
             </div>
 
-            <button type="submit" >Login</button>
+            <button type="submit" id="login-btn">Login</button>
         </form>
 
         <p class="signup">
-            New User? <a href="signup.html">Signup</a>
+            New User? <a href="signup.html" id="signup-link">Signup</a>
         </p>
-    </div>
+    </div> 
 </div>
+<script src="./login.js"></script>
 </body>
 </html>
