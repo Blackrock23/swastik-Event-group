@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swastik Event 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav h2 {
+            color: #667eea;
+            font-size: 1.8em;
+        }
+
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Event Details Section */
+        .details-section {
+            background: white;
+            padding: 60px 20px;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .details-section h2 {
+            text-align: center;
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .detail-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .detail-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .detail-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Schedule Section */
+        .schedule {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            margin: 20px;
+            border-radius: 15px;
+        }
+
+        .schedule h2 {
+            text-align: center;
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: white;
+            padding: 20px 30px;
+            margin-bottom: 15px;
+            border-left: 5px solid #667eea;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .timeline-item .time {
+            font-weight: 700;
+            color: #667eea;
+            min-width: 100px;
+        }
+
+        .timeline-item .event {
+            flex: 1;
+            margin-left: 20px;
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            nav a {
+                margin: 5px 10px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .timeline-item .event {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <h2>🎉 Swastik Event</h2>
+        <div>
+            <a href="#details">Details</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#register">Register</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to Swastik Event 2026</h1>
+        <p>Experience an unforgettable celebration of culture, innovation, and community</p>
+        <button class="cta-button" onclick="scrollTo('register')">Register Now</button>
+    </div>
+
+    <!-- Event Details -->
+    <div id="details" class="details-section">
+        <h2>📋 Event Details</h2>
+        <div class="details-grid">
+            <div class="detail-card">
+                <div class="icon">📅</div>
+                <h3>Date</h3>
+                <p>March 15, 2026</p>
+            </div>
+            <div class="detail-card">
+                <div class="icon">⏰</div>
+                <h3>Time</h3>
+                <p>10:00 AM - 6:00 PM</p>
+            </div>
+            <div class="detail-card">
+                <div class="icon">📍</div>
+                <h3>Location</h3>
+                <p>Grand Convention Center</p>
+            </div>
+        </div>
+        <div class="details-grid">
+            <div class="detail-card">
+                <div class="icon">🎭</div>
+                <h3>Activities</h3>
+                <p>Cultural performances, workshops, live music & more</p>
+            </div>
+            <div class="detail-card">
+                <div class="icon">👥</div>
+                <h3>Expected Attendees</h3>
+                <p>500+ participants from diverse backgrounds</p>
+            </div>
+            <div class="detail-card">
+                <div class="icon">🎁</div>
+                <h3>Prizes</h3>
+                <p>Amazing giveaways and recognition for winners</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule -->
+    <div id="schedule" class="schedule">
+        <h2>⏳ Schedule</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="time">10:00 AM</div>
+                <div class="event">Opening Ceremony & Welcome Address</div>
+            </div>
+            <div class="timeline-item">
+                <div class="time">11:00 AM</div>
+                <div class="event">Cultural Performances & Exhibitions</div>
+            </div>
+            <div class="timeline-item">
+                <div class="time">1:00 PM</div>
+                <div class="event">Lunch Break</div>
+            </div>
+            <div class="timeline-item">
+                <div class="time">2:00 PM</div>
+                <div class="event">Interactive Workshops & Panel Discussions</div>
+            </div>
+            <div class="timeline-item">
+                <div class="time">4:00 PM</div>
+                <div class="event">Games & Team Activities</div>
+            </div>
+            <div class="timeline-item">
+                <div class="time">5:30 PM</div>
+                <div class="event">Prize Distribution & Closing Ceremony</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div id="register" style="text-align: center; padding: 60px 20px; background: white; margin: 20px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);">
+        <h2 style="color: #667eea; font-size: 2.2em; margin-bottom: 20px;">Ready to Join Us?</h2>
+        <p style="font-size: 1.1em; color: #666; margin-bottom: 30px;">Don't miss out on this amazing event. Register now to secure your spot!</p>
+        <button class="cta-button" onclick="alert('Registration form will open here')">Register Today</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Swastik Event 2026</strong></p>
+        <p>Celebrating Culture, Innovation & Community</p>
+        <p>© 2026 All Rights Reserved | Contact: info@swastik-event.com</p>
+    </footer>
+
+    <script>
+        function scrollTo(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+    
