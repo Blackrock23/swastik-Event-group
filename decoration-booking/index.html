@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoration Event Booking System</title>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .welcome-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .welcome-content {
+            max-width: 800px;
+        }
+
+        .welcome-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .welcome-content p {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+
+        .welcome-content .features {
+            margin: 40px 0;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .features li {
+            font-size: 1.1em;
+            margin: 15px 0;
+            list-style: none;
+        }
+
+        .features li:before {
+            content: "✓ ";
+            color: #FFD700;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 50px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-hero">
+        <div class="welcome-content">
+            <h1>🎨 Decoration Event Booking</h1>
+            <p>Create Your Perfect Event Decoration Experience</p>
+            
+            <ul class="features">
+                <li>Select Event Details</li>
+                <li>Choose From Ready-Made Decorations</li>
+                <li>Or Create Custom Decorations</li>
+                <li>Easy Payment Process</li>
+                <li>Professional Event Planning</li>
+            </ul>
+
+            <a href="booking.html" class="cta-button">Start Booking Now →</a>
+        </div>
+    </div>
+</body>
+</html>

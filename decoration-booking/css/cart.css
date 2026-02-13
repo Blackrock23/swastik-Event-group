@@ -1,0 +1,275 @@
+/* ===== CART PAGE STYLES ===== */
+
+.cart-page {
+    animation: fadeIn 0.5s ease;
+}
+
+.step-indicator {
+    color: var(--secondary-color);
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.checkout-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Order Summary */
+.order-summary {
+    background: var(--light-bg);
+    padding: 25px;
+    border-radius: 12px;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.order-summary h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 15px;
+}
+
+.detail-section {
+    margin-bottom: 25px;
+}
+
+.detail-section:last-of-type {
+    margin-bottom: 0;
+}
+
+.detail-section h3 {
+    color: var(--secondary-color);
+    font-size: 1em;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.95em;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-item .label {
+    color: #666;
+    font-weight: 500;
+}
+
+.detail-item .value {
+    color: var(--text-color);
+    font-weight: 600;
+    text-align: right;
+}
+
+.detail-item .value.price {
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.price-box {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 2px solid var(--primary-color);
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    color: #666;
+}
+
+.price-row.final-price {
+    border-top: 2px solid var(--border-color);
+    padding-top: 12px;
+    margin-top: 12px;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.price-row.discount-row {
+    color: var(--success-color);
+}
+
+/* Payment Form */
+.payment-form-section {
+    flex: 1;
+}
+
+.payment-form-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 1.5em;
+}
+
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+}
+
+.payment-option input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.payment-option label {
+    margin: 0;
+    cursor: pointer;
+    font-weight: 500;
+    flex: 1;
+}
+
+/* Payment Sections */
+.payment-section {
+    background: #f0f4ff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.payment-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.payment-section .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.bank-info {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.bank-info p {
+    padding: 8px 0;
+    color: #333;
+    font-size: 0.95em;
+}
+
+.bank-info strong {
+    color: var(--primary-color);
+}
+
+.installment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.installment-option {
+    display: flex;
+    align-items: center;
+}
+
+.installment-option input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.installment-option label {
+    margin: 0;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Success Modal */
+.success-icon {
+    font-size: 4em;
+    color: var(--success-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-content h2 {
+    text-align: center;
+    color: var(--success-color);
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .checkout-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .order-summary {
+        position: static;
+        order: 2;
+    }
+
+    .payment-form-section {
+        order: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .payment-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-section .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+}

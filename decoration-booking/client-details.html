@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Details & Summary - Swastik Event 2026</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/client-details.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">🎉 Swastik Event 2026</a>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-bar-fill" style="width: 80%;"></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page client-details-page">
+            <h1>Step 3: Complete Your Details</h1>
+            <p class="step-indicator">Provide venue and contact information</p>
+
+            <!-- Error Messages -->
+            <div id="errorMessages"></div>
+
+            <div class="content-wrapper">
+                <!-- Left: Form -->
+                <div class="form-section">
+                    <h2>Your Information</h2>
+
+                    <form id="clientDetailsForm">
+                        <!-- Client Info -->
+                        <div class="form-group">
+                            <label for="clientName">Full Name *</label>
+                            <input 
+                                type="text" 
+                                id="clientName" 
+                                name="clientName" 
+                                placeholder="Your full name" 
+                                required
+                            >
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="clientPhone">Phone Number *</label>
+                                <input 
+                                    type="tel" 
+                                    id="clientPhone" 
+                                    name="clientPhone" 
+                                    placeholder="10-digit phone number" 
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="clientEmail">Email Address *</label>
+                                <input 
+                                    type="email" 
+                                    id="clientEmail" 
+                                    name="clientEmail" 
+                                    placeholder="your@email.com" 
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Venue Info -->
+                        <h3 style="margin-top: 30px; margin-bottom: 20px;">Venue Information</h3>
+
+                        <div class="form-group">
+                            <label for="venueName">Venue Name *</label>
+                            <input 
+                                type="text" 
+                                id="venueName" 
+                                name="venueName" 
+                                placeholder="e.g., Grand Ballroom, Riverside Garden" 
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="venueAddress">Venue Address *</label>
+                            <textarea 
+                                id="venueAddress" 
+                                name="venueAddress" 
+                                placeholder="Complete venue address including road, area" 
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">City / Location *</label>
+                            <input 
+                                type="text" 
+                                id="city" 
+                                name="city" 
+                                placeholder="e.g., Mumbai, Delhi, Bangalore" 
+                                required
+                            >
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="btn-group">
+                            <a href="decor-selection.html" class="button btn-secondary">← Back to Decorations</a>
+                            <button type="submit" class="button btn-primary">Proceed to Payment →</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right: Summary -->
+                <div class="summary-section">
+                    <h2>Booking Summary</h2>
+
+                    <div class="summary-box">
+                        <!-- Event Details -->
+                        <div class="summary-block">
+                            <h4>📅 Event Details</h4>
+                            <div class="summary-item">
+                                <span>Event Type:</span>
+                                <strong id="summaryEventType">-</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Date & Time:</span>
+                                <strong id="summaryDate">-</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Guests:</span>
+                                <strong id="summaryGuests">-</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Budget:</span>
+                                <strong id="summaryBudget">-</strong>
+                            </div>
+                        </div>
+
+                        <!-- Decoration Details -->
+                        <div class="summary-block">
+                            <h4>🎨 Decoration</h4>
+                            <div class="summary-item">
+                                <span>Design:</span>
+                                <strong id="summaryDecor">-</strong>
+                            </div>
+                        </div>
+
+                        <!-- Pricing -->
+                        <div class="summary-block pricing-block">
+                            <h4>💰 Pricing</h4>
+                            <div class="summary-item">
+                                <span>Decoration Cost:</span>
+                                <strong id="summaryDecoPrice">₹0</strong>
+                            </div>
+                            <div class="summary-item" style="border-top: 2px solid #ddd; padding-top: 12px; margin-top: 12px; font-size: 1.2em;">
+                                <span>Total:</span>
+                                <strong id="summaryTotal">₹0</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Info Box -->
+                    <div class="info-box">
+                        <h4>ℹ️ Important Information</h4>
+                        <ul>
+                            <li>A confirmation email will be sent to your email address</li>
+                            <li>Our team will contact you for design consultation</li>
+                            <li>Payment can be made in installments</li>
+                            <li>Full cancellation upto 30 days before event</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Swastik Event. All rights reserved | Professional Event Decoration & Booking</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/client-details.js"></script>
+</body>
+</html>

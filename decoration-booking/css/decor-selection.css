@@ -1,0 +1,231 @@
+/* ===== DECORATION SELECTION PAGE STYLES ===== */
+
+.decor-selection-page {
+    animation: fadeIn 0.5s ease;
+}
+
+.step-indicator {
+    color: var(--secondary-color);
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+/* View Toggle */
+.view-toggle {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+.toggle-btn {
+    padding: 12px 30px;
+    border: 2px solid var(--border-color);
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.toggle-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-color: transparent;
+}
+
+/* Decorations Grid */
+.decoration-view {
+    animation: fadeIn 0.3s ease;
+}
+
+.decorations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.decoration-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 3px solid transparent;
+}
+
+.decoration-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.decoration-card.selected {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-lg);
+}
+
+.decoration-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: var(--light-bg);
+}
+
+.decoration-info {
+    padding: 20px;
+}
+
+.decoration-name {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.decoration-description {
+    color: #666;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.decoration-price {
+    font-size: 1.8em;
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.decoration-items {
+    background: var(--light-bg);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.decoration-items h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.decoration-items ul {
+    list-style: none;
+    padding: 0;
+}
+
+.decoration-items li {
+    color: #666;
+    padding: 5px 0;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+}
+
+.decoration-items li:before {
+    content: "✓ ";
+    color: var(--success-color);
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.select-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.select-btn:hover {
+    transform: scale(1.02);
+}
+
+.select-btn.selected {
+    background: var(--success-color);
+}
+
+/* Custom Option Card */
+.custom-option-card {
+    background: linear-gradient(135deg, #667eea20, #764ba220);
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.custom-option-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.custom-option-card p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.custom-features {
+    list-style: none;
+    text-align: left;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.custom-features li {
+    padding: 10px 0;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.custom-features li:before {
+    content: "★ ";
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-right: 12px;
+    font-size: 1.2em;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .decorations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .view-toggle {
+        flex-direction: column;
+    }
+
+    .toggle-btn {
+        width: 100%;
+    }
+
+    .custom-option-card {
+        padding: 25px;
+    }
+}

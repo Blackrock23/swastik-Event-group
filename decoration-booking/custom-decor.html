@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Decoration Design - Swastik Event 2026</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/custom-decor.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">🎉 Swastik Event 2026</a>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-bar-fill" style="width: 40%;"></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page custom-decor-page">
+            <h1>Design Your Custom Decoration</h1>
+            <p class="step-indicator">Create a unique design tailored to your event</p>
+
+            <!-- Error Messages -->
+            <div id="errorMessages"></div>
+
+            <!-- Custom Decoration Form -->
+            <form id="customDecorationForm">
+                <div class="form-group">
+                    <label for="themeName">Theme Name *</label>
+                    <input 
+                        type="text" 
+                        id="themeName" 
+                        name="themeName" 
+                        placeholder="e.g., Modern Fusion, Mystical Garden, Royal Heritage" 
+                        required
+                    >
+                    <small class="hint">Give your custom theme a unique name</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="colorPreference">Color Preference / Palette *</label>
+                    <input 
+                        type="text" 
+                        id="colorPreference" 
+                        name="colorPreference" 
+                        placeholder="e.g., Gold and Navy, Blush Pink and Cream, Jewel Tones" 
+                        required
+                    >
+                    <small class="hint">Describe your preferred color scheme</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Decoration Items *</label>
+                    <p class="form-hint">Select items you'd like in your decoration:</p>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="item-flowers" name="decorationItems" value="Flowers">
+                            <label for="item-flowers">🌸 Fresh Flowers & Floral Arrangements</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="item-lights" name="decorationItems" value="Lights">
+                            <label for="item-lights">✨ String Lights & LED Lighting</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="item-drapes" name="decorationItems" value="Drapes">
+                            <label for="item-drapes">🎭 Drapes & Fabric Decoration</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="item-balloons" name="decorationItems" value="Balloons">
+                            <label for="item-balloons">🎈 Balloons & Balloon Installations</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="item-backdrop" name="decorationItems" value="Backdrop">
+                            <label for="item-backdrop">📸 Photo Backdrop & Wall Decoration</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="item-centerpiece" name="decorationItems" value="Centerpieces">
+                            <label for="item-centerpiece">🍽️ Table Centerpieces</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="item-entrance" name="decorationItems" value="Entrance">
+                            <label for="item-entrance">🚪 Entrance Gate Decoration</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="item-cultural" name="decorationItems" value="Cultural">
+                            <label for="item-cultural">🎨 Cultural Elements & Props</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="referenceUrl">Reference Image URL (Optional)</label>
+                    <input 
+                        type="text" 
+                        id="referenceUrl" 
+                        name="referenceUrl" 
+                        placeholder="Paste link to Pinterest, Instagram, or other image URL"
+                    >
+                    <small class="hint">Share inspiration images for our team</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="customNotes">Custom Notes & Special Requests</label>
+                    <textarea 
+                        id="customNotes" 
+                        name="customNotes" 
+                        placeholder="Any specific requirements, preferences, or details our design team should know?"
+                    ></textarea>
+                </div>
+
+                <div class="price-info">
+                    <p>Custom Decoration Design: <span class="price">₹35,000</span> (Base Price)</p>
+                    <small>Final price may vary based on complexity and materials</small>
+                </div>
+
+                <!-- Buttons -->
+                <div class="btn-group">
+                    <a href="decor-selection.html" class="button btn-secondary">← Back to Designs</a>
+                    <button type="submit" class="button btn-primary">Confirm Custom Design →</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Swastik Event. All rights reserved | Professional Event Decoration & Booking</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/custom-decor.js"></script>
+</body>
+</html>

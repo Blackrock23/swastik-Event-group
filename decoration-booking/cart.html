@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment & Checkout - Swastik Event 2026</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">🎉 Swastik Event 2026</a>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-bar-fill" style="width: 100%;"></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page cart-page">
+            <h1>Step 4: Payment & Confirmation</h1>
+            <p class="step-indicator">Complete your booking with payment</p>
+
+            <!-- Error Messages -->
+            <div id="errorMessages"></div>
+
+            <div class="checkout-wrapper">
+                <!-- Left: Order Summary -->
+                <div class="order-summary">
+                    <h2>Order Summary</h2>
+
+                    <!-- Booking Details -->
+                    <div class="detail-section">
+                        <h3>📅 Your Event</h3>
+                        <div class="detail-item">
+                            <span class="label">Type:</span>
+                            <span class="value" id="summaryEventType">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Date:</span>
+                            <span class="value" id="summaryDate">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Time:</span>
+                            <span class="value" id="summaryTime">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Guests:</span>
+                            <span class="value" id="summaryGuests">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Location:</span>
+                            <span class="value" id="summaryCity">-</span>
+                        </div>
+                    </div>
+
+                    <!-- Decoration Details -->
+                    <div class="detail-section">
+                        <h3>🎨 Decoration Package</h3>
+                        <div class="detail-item">
+                            <span class="label">Style:</span>
+                            <span class="value" id="summaryDecor">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Price:</span>
+                            <span class="value price" id="summaryDecoPrice">₹0</span>
+                        </div>
+                    </div>
+
+                    <!-- Client Details -->
+                    <div class="detail-section">
+                        <h3>👤 Client Information</h3>
+                        <div class="detail-item">
+                            <span class="label">Name:</span>
+                            <span class="value" id="summaryName">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Email:</span>
+                            <span class="value" id="summaryEmail">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Phone:</span>
+                            <span class="value" id="summaryPhone">-</span>
+                        </div>
+                    </div>
+
+                    <!-- Total Price -->
+                    <div class="price-box">
+                        <div class="price-row">
+                            <span>Decoration Package:</span>
+                            <span id="totalAmount">₹0</span>
+                        </div>
+                        <div class="price-row discount-row">
+                            <span>Discount (if any):</span>
+                            <span>₹0</span>
+                        </div>
+                        <div class="price-row final-price">
+                            <span>Total Amount Due:</span>
+                            <span id="finalAmount">₹0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Payment Form -->
+                <div class="payment-form-section">
+                    <h2>Payment Method</h2>
+
+                    <form id="paymentForm">
+                        <!-- Payment Method Selection -->
+                        <div class="form-group">
+                            <label>Select Payment Method *</label>
+                            <div class="payment-methods">
+                                <div class="payment-option">
+                                    <input type="radio" id="card" name="paymentMethod" value="credit-card" checked>
+                                    <label for="card">💳 Credit/Debit Card</label>
+                                </div>
+                                <div class="payment-option">
+                                    <input type="radio" id="upi" name="paymentMethod" value="upi">
+                                    <label for="upi">📱 UPI</label>
+                                </div>
+                                <div class="payment-option">
+                                    <input type="radio" id="bank" name="paymentMethod" value="bank-transfer">
+                                    <label for="bank">🏦 Bank Transfer</label>
+                                </div>
+                                <div class="payment-option">
+                                    <input type="radio" id="installment" name="paymentMethod" value="installment">
+                                    <label for="installment">📅 Installment Plan</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Details -->
+                        <div id="cardSection" class="payment-section">
+                            <h3>Card Details</h3>
+                            <div class="form-group">
+                                <label for="cardName">Cardholder Name *</label>
+                                <input type="text" id="cardName" name="cardName" placeholder="Name on Card" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number *</label>
+                                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9101 1121" maxlength="19" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry">Expiry Date *</label>
+                                    <input type="text" id="expiry" name="expiry" placeholder="MM/YY" maxlength="5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV *</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- UPI Details -->
+                        <div id="upiSection" class="payment-section" style="display: none;">
+                            <h3>UPI Payment</h3>
+                            <div class="form-group">
+                                <label for="upiId">UPI ID *</label>
+                                <input type="text" id="upiId" name="upiId" placeholder="yourname@upi">
+                            </div>
+                        </div>
+
+                        <!-- Bank Transfer Details -->
+                        <div id="bankSection" class="payment-section" style="display: none;">
+                            <h3>Bank Transfer Details</h3>
+                            <div class="bank-info">
+                                <p><strong>Account Name:</strong> Swastik Events Pvt Ltd</p>
+                                <p><strong>Account Number:</strong> 123456789012345</p>
+                                <p><strong>IFSC Code:</strong> SBIN0001234</p>
+                                <p><strong>Bank:</strong> State Bank of India</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="transactionId">Transaction Reference ID *</label>
+                                <input type="text" id="transactionId" name="transactionId" placeholder="After transfer, enter reference ID">
+                            </div>
+                        </div>
+
+                        <!-- Installment Details -->
+                        <div id="installmentSection" class="payment-section" style="display: none;">
+                            <h3>Installment Options</h3>
+                            <div class="installment-options">
+                                <div class="installment-option">
+                                    <input type="radio" id="inst3" name="installmentPlan" value="3">
+                                    <label for="inst3">3 Installments (No Interest)</label>
+                                </div>
+                                <div class="installment-option">
+                                    <input type="radio" id="inst6" name="installmentPlan" value="6" checked>
+                                    <label for="inst6">6 Installments (2% Interest)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="form-group checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">I agree to the terms and conditions and privacy policy</label>
+                            </div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="btn-group">
+                            <a href="client-details.html" class="button btn-secondary">← Back to Details</a>
+                            <button type="submit" class="button btn-primary" id="payBtn">✓ Confirm & Pay</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h2>Booking Confirmed!</h2>
+            <p>Your event decoration booking has been successfully confirmed.</p>
+            <p>Confirmation details have been sent to your email.</p>
+            <p>Our team will contact you within 24 hours for design consultation.</p>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="index.html" class="button btn-primary">Go to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Swastik Event. All rights reserved | Professional Event Decoration & Booking</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

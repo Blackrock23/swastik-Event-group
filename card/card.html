@@ -1,0 +1,197 @@
+Sahil Pankar, [2/11/2026 6:40 PM]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swastik Events Visiting Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .card-container {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 1.75 / 1;
+            margin-bottom: 2rem;
+        }
+
+        .card-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-radius: 15px;
+        }
+
+        .card-container:hover .card-content {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            background: white;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: white;
+        }
+
+        .logo-bg {
+            background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+        }
+
+        .swastik-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .print-btn {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s;
+            margin-top: 10px;
+        }
+
+        .print-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        @media print {
+            .no-print { display: none; }
+            body { background: white; }
+            .card-container { perspective: none; margin: 0; }
+            .card-content { transform: none !important; box-shadow: none; border: 1px solid #ddd; }
+            .card-back { position: relative; transform: none; margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print text-center mb-6">
+        <h1 class="text-2xl font-bold text-gray-800">Swastik Events Business Card</h1>
+        <p class="text-gray-500">Hover or tap to flip the card</p>
+    </div>
+
+    <!-- The Card -->
+    <div class="card-container">
+        <div class="card-content">
+            
+            <!-- Front Side -->
+            <div class="card-face p-6 flex items-stretch border-l-8 border-red-500">
+                <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <!-- Simple Custom SVG Logo -->
+                            <div class="w-12 h-12 logo-bg rounded-lg flex items-center justify-center shadow-lg">
+                                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15 8L22 9L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9L9 8L12 2Z" fill="white"/>
+                                </svg>
+
+</div>
+                            <h2 class="text-3xl swastik-font font-bold text-slate-800 tracking-tight">SWASTIK <span class="text-orange-600">EVENTS</span></h2>
+                        </div>
+                        <p class="text-xs text-gray-400 font-semibold uppercase tracking-widest ml-16">Life is an event make it memorable</p>
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="flex items-start gap-2 text-gray-600 text-sm mb-4">
+                            <svg class="w-4 h-4 mt-1 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                            <p>Anand Vilas chawl, Tembhipada,<br>Bhandup West, Mumbai - 400078</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-end text-right border-l pl-4 border-gray-100">
+                    <div class="mb-3">
+                        <p class="text-xs font-bold text-gray-400 uppercase">Contact Us</p>
+                        <p class="text-sm font-semibold text-slate-700">Nitesh: <span class="text-orange-600">9167914075</span></p>
+                        <p class="text-sm font-semibold text-slate-700">Sahil: <span class="text-orange-600">9769079224</span></p>
+                        <p class="text-sm font-semibold text-slate-700">Vedant: <span class="text-orange-600">7039721527</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back Side -->
+            <div class="card-face card-back p-8 flex flex-col justify-center items-center relative">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-16 -mt-16"></div>
+                <div class="absolute bottom-0 left-0 w-24 h-24 bg-orange-500 opacity-10 rounded-full -ml-12 -mb-12"></div>
+                
+                <h3 class="text-xl font-bold mb-4 border-b-2 border-orange-400 pb-1 uppercase tracking-widest">Our Services</h3>
+                
+                <div class="grid grid-cols-2 gap-x-8 gap-y-2 text-sm">
+                    <div class="flex items-center gap-2">
+                        <span class="text-orange-400">•</span> Birthday Party
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-orange-400">•</span> Baby Shower
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-orange-400">•</span> Balloon Decoration
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-orange-400">•</span> Haldi Events
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-orange-400">•</span> Christmas Decor
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-orange-400">•</span> Lighting
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-orange-400">•</span> Corporate Events
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-orange-400">•</span> Special Events
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-orange-400">•</span> Much More...
+                    </div>
+                </div>
+
+                <p class="mt-8 text-xs italic text-gray-300">"Your Vision, Our Execution"</p>
+            </div>
+
+        </div>
+    </div>
+
+<div class="no-print flex gap-4">
+        <button onclick="window.print()" class="print-btn flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+            Print Card
+        </button>
+    </div>
+
+    <div class="no-print mt-8 max-w-md text-sm text-gray-500 text-center">
+        <p>This is a professional 3.5" x 2" business card design. The front focuses on contact and brand identity, while the back highlights your specific event services.</p>
+    </div>
+
+</body>
+</html>

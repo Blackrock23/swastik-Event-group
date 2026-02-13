@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Booking - Swastik Event 2026</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">🎉 Swastik Event 2026</a>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-bar-fill" style="width: 20%;"></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page booking-page">
+            <h1>Step 1: Event Details</h1>
+            <p class="step-indicator">Tell us about your event</p>
+
+            <!-- Error Messages -->
+            <div id="errorMessages"></div>
+
+            <!-- Booking Form -->
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="eventDate">Event Date *</label>
+                    <input 
+                        type="date" 
+                        id="eventDate" 
+                        name="eventDate" 
+                        required
+                    >
+                    <small class="hint">Choose a future date for your event</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventType">Event Type / Program Name *</label>
+                    <input 
+                        type="text" 
+                        id="eventType" 
+                        name="eventType" 
+                        placeholder="e.g., Wedding Reception, Corporate Party, Birthday" 
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="numberOfGuests">Number of Guests *</label>
+                        <input 
+                            type="number" 
+                            id="numberOfGuests" 
+                            name="numberOfGuests" 
+                            min="1" 
+                            max="5000" 
+                            placeholder="e.g., 150" 
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventTime">Event Time *</label>
+                        <input 
+                            type="time" 
+                            id="eventTime" 
+                            name="eventTime" 
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="budgetRange">Budget Range *</label>
+                    <select id="budgetRange" name="budgetRange" required>
+                        <option value="">-- Select Budget Range --</option>
+                        <option value="20000-50000">₹20,000 - ₹50,000</option>
+                        <option value="50000-100000">₹50,000 - ₹1,00,000</option>
+                        <option value="100000-250000">₹1,00,000 - ₹2,50,000</option>
+                        <option value="250000-500000">₹2,50,000 - ₹5,00,000</option>
+                        <option value="500000+">₹5,00,000+</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Special Requirements / Notes</label>
+                    <textarea 
+                        id="notes" 
+                        name="notes" 
+                        placeholder="Any special requests, themes, or preferences?"
+                    ></textarea>
+                </div>
+
+                <!-- Buttons -->
+                <div class="btn-group">
+                    <a href="index.html" class="button btn-secondary">Back to Home</a>
+                    <button type="submit" class="button btn-primary">Continue to Decorations →</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Swastik Event. All rights reserved | Professional Event Decoration & Booking</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Pankar - 3D Portfolio</title>
+    <link rel="stylesheet" href="3d-styles.css">
+</head>
+<body>
+    <!-- 3D Scene Container -->
+    <div id="scene-container"></div>
+    
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Main Content Overlay -->
+    <div class="content-overlay">
+        <!-- Header -->
+        <header class="hero-header">
+            <div class="glitch-wrapper">
+                <h1 class="glitch" data-text="SAHIL PANKAR">SAHIL PANKAR</h1>
+            </div>
+            <p class="typing-text"><span id="typed"></span></p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="cyber-nav">
+            <a href="#about" class="nav-item" data-text="ABOUT">ABOUT</a>
+            <a href="#projects" class="nav-item" data-text="PROJECTS">PROJECTS</a>
+            <a href="#skills" class="nav-item" data-text="SKILLS">SKILLS</a>
+            <a href="#contact" class="nav-item" data-text="CONTACT">CONTACT</a>
+        </nav>
+
+        <!-- Main Container -->
+        <main class="main-content">
+            <!-- About Section -->
+            <section id="about" class="section-card">
+                <div class="card-header">
+                    <span class="card-icon">◈</span>
+                    <h2>ABOUT ME</h2>
+                    <span class="card-line"></span>
+                </div>
+                <div class="card-content">
+                    <p>I'm a passionate <span class="highlight">Full Stack Developer</span> with expertise in building modern web applications. With a strong foundation in front-end and back-end technologies, I create solutions that are both functional and user-friendly.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="2">0</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="10">0</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="5">0</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section-card">
+                <div class="card-header">
+                    <span class="card-icon">◈</span>
+                    <h2>FEATURED PROJECTS</h2>
+                    <span class="card-line"></span>
+                </div>
+                <div class="card-content">
+                    <div class="project-grid">
+                        <div class="project-card" data-tilt>
+                            <div class="project-icon">🛒</div>
+                            <h3>E-Commerce Website</h3>
+                            <p>Full-stack e-commerce solution built with HTML, CSS, JavaScript, and Node.js</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Node.js</span>
+                            </div>
+                            <a href="https://github.com/Blackrock23/final-year-project.git" class="project-link">View Project →</a>
+                        </div>
+                        <div class="project-card" data-tilt>
+                            <div class="project-icon">⏱️</div>
+                            <h3>Stopwatch Application</h3>
+                            <p>Precision stopwatch built with JavaScript for time tracking</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                            </div>
+                            <a href="https://github.com/Blackrock23/stopwatch.git" class="project-link">View Project →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section-card">
+                <div class="card-header">
+                    <span class="card-icon">◈</span>
+                    <h2>SKILLS</h2>
+                    <span class="card-line"></span>
+                </div>
+                <div class="card-content">
+                    <div class="skills-container">
+                        <div class="skill-bar" data-skill="90">
+                            <div class="skill-info">
+                                <span class="skill-name">HTML/CSS</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar" data-skill="85">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar" data-skill="75">
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar" data-skill="80">
+                            <div class="skill-info">
+                                <span class="skill-name">Responsive Design</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-icons">
+                        <div class="skill-icon" title="HTML5">📄</div>
+                        <div class="skill-icon" title="CSS3">🎨</div>
+                        <div class="skill-icon" title="JavaScript">⚡</div>
+                        <div class="skill-icon" title="Python">🐍</div>
+                        <div class="skill-icon" title="Node.js">🟢</div>
+                        <div class="skill-icon" title="Git">📊</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section-card">
+                <div class="card-header">
+                    <span class="card-icon">◈</span>
+                    <h2>GET IN TOUCH</h2>
+                    <span class="card-line"></span>
+                </div>
+                <div class="card-content">
+                    <div class="contact-grid">
+                        <a href="mailto:sahilpankar3@gmail.com" class="contact-card">
+                            <span class="contact-icon">✉️</span>
+                            <span class="contact-text">sahilpankar3@gmail.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sahil-pankar-236236368" class="contact-card">
+                            <span class="contact-icon">💼</span>
+                            <span class="contact-text">LinkedIn Profile</span>
+                        </a>
+                        <a href="https://github.com/Blackrock23" class="contact-card">
+                            <span class="contact-icon">🐙</span>
+                            <span class="contact-text">GitHub Profile</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="cyber-footer">
+            <p>© 2024 Sahil Pankar | Built with ♡ and Code</p>
+        </footer>
+    </div>
+
+    <!-- 3D Computer Model Canvas -->
+    <canvas id="computer-canvas"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="3d-script.js"></script>
+</body>
+</html>
