@@ -16,7 +16,10 @@
                 <span class="logo-mark"><img src="./photos/logo.jpeg" alt="Swastik-logo"></span>
                 <span class="logo-text">Swastik Events</span>
             </div>
-            <ul class="nav-links">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./about.html" class="active">About</a></li>
                 <li class="has-dropdown">
@@ -34,7 +37,7 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
-        <div class="nav-right">
+        <div class="nav-right" id="navRight">
             <a href="./login-signup/login.html" class="btn btn-outline">Login</a>
             <a href="./decoration-booking/index.html" class="btn btn-primary"><i class="fa-solid fa-calendar-plus"></i>Plan Event</a>
             <button class="icon-btn">
@@ -42,6 +45,37 @@
             </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <h3>Menu</h3>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="./index.html"><i class="fa-solid fa-home"></i> Home</a></li>
+            <li><a href="./about.html" class="active"><i class="fa-solid fa-circle-info"></i> About</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle">
+                    <i class="fa-solid fa-concierge-bell"></i> Services
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown-menu">
+                    <a href="tel:9769079224"><i class="fa-solid fa-phone"></i> Contact</a>
+                    <a href="#"><i class="fa-solid fa-headset"></i> Help Desk</a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </li>
+            <li><a href="./portfolio/index.html"><i class="fa-solid fa-images"></i> Portfolio</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-comments"></i> Contact</a></li>
+            <li class="mobile-menu-divider"></li>
+            <li><a href="./login-signup/login.html" class="mobile-login"><i class="fa-solid fa-sign-in-alt"></i> Login</a></li>
+            <li><a href="./decoration-booking/index.html" class="mobile-plan-event"><i class="fa-solid fa-calendar-plus"></i> Plan Event</a></li>
+            <li><a href="#cart" class="mobile-cart"><i class="fa-solid fa-cart-arrow-down"></i> Cart</a></li>
+        </ul>
+    </div>
     <div class="about-background">
         <div class="about">
              <h1 class="head">About Us</h1>
@@ -92,5 +126,46 @@
         <p>&copy; 2024 Swastik Event. All rights reserved.</p>
     </footer>
 
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-links a');
+        const mobileDropdownToggle = document.querySelector('.mobile-dropdown-toggle');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileMenuClose.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close menu when a link is clicked
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Mobile dropdown toggle
+        if (mobileDropdownToggle) {
+            mobileDropdownToggle.addEventListener('click', function() {
+                this.parentElement.classList.toggle('active');
+            });
+        }
+
+        // Close menu on background click
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.mobile-menu') && !event.target.closest('.mobile-menu-toggle')) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 </body>
 </html>
