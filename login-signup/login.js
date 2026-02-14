@@ -22,12 +22,12 @@ if (loginForm) {
 }
 
 // Handle login button click as backup
-if (loginBtn) {
-    loginBtn.addEventListener('click', function(event) {
-        event.preventDefault();
-        window.location.href = '../index.html';
-    });
-}
+// if (loginBtn) {
+//     loginBtn.addEventListener('click', function(event) {
+//         event.preventDefault();
+//         window.location.href = '../index.html';
+//     });
+// }
 
 // Handle signup link click
 if (signupLink) {

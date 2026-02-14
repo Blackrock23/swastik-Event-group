@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Swastik Events</title>
+
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: black ;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  transition: opacity 1s ease;
+}
+
+.splash {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 40px;
+  animation: fadeOut 4s forwards;
+}
+
+.balloons {
+  position: relative;
+  height: 300px;
+}
+
+.balloon {
+  width: 70px;
+  height: 90px;
+  border-radius: 50%;
+  position: absolute;
+  align-items: center;
+  bottom: -120px;
+  animation: floatUp 4s ease-in forwards;
+  box-shadow: inset -5px -10px 15px rgba(0,0,0,0.2);
+}
+
+.red { background: #ff4d4d; left: -120px; }
+.blue { background: #4da6ff; left: -40px; }
+.yellow { background: #ffd633; left: 40px; }
+.green { background: #33cc33; left: 120px; }
+
+@keyframes floatUp {
+  0% { bottom: -120px; opacity: 1; }
+  100% { bottom: 500px; opacity: 0; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="splash">
+  <h1 class="logo">Swastik Events </h1>
+  <div class="balloons">
+    <div class="balloon red"><img src="//www.freepik.com/premium-ai-image/b2-balloon-3d-icon-with-string-balloon-is-red-string-is-yellow-model-object-clean-background_344045043.htm#fromView=search&page=1&position=13&uuid=4be73281-ab30-44fa-b8c9-fb0abd8ac051&query=balloon+attached+to+1+knot"></div>
+    <div class="balloon blue"></div>
+    <div class="balloon yellow"></div>
+    <div class="balloon green"></div>
+  </div>
+</div>
+
+<canvas id="confetti"></canvas>
+
+<script>
+const logo = document.querySelector(".logo");
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let confetti = [];
+
+for (let i = 0; i < 120; i++) {
+  confetti.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 6 + 2,
+    d: Math.random() * 50
+  });
+}
+
+function drawConfetti() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "white";
+
+  confetti.forEach((c) => {
+    ctx.beginPath();
+    ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  update();
+}
+
+function update() {
+  confetti.forEach((c) => {
+    c.y += Math.cos(c.d) + 1;
+    if (c.y > canvas.height) {
+      c.y = 0;
+    }
+  });
+}
+
+setInterval(drawConfetti, 20);
+
+logo.addEventListener("animationend", () => {
+  document.body.style.opacity = "0";
+
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 1000);
+});
+</script>
+
+</body>
+</html>
