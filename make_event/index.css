@@ -322,3 +322,360 @@ button {
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
+
+/* Mobile Menu Styles */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #E50914;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.mobile-menu-toggle:hover {
+    color: #ff6666;
+    transform: scale(1.1);
+    background: rgba(229, 9, 20, 0.1);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    padding-top: 72px;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 2px solid #E50914;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+}
+
+.mobile-menu-header h3 {
+    color: #E50914;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.mobile-menu-close {
+    background: none;
+    border: none;
+    color: #E50914;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+}
+
+.mobile-menu-close:hover {
+    color: #ff6666;
+    transform: rotate(90deg);
+}
+
+.mobile-menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.mobile-menu-links li {
+    margin: 0;
+}
+
+.mobile-menu-links a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #b0b0b0;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(229, 9, 20, 0.1);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.mobile-menu-links a:hover,
+.mobile-menu-links a.active {
+    background: rgba(229, 9, 20, 0.1);
+    color: #E50914;
+    padding-left: 2.5rem;
+}
+
+.mobile-menu-links a i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Mobile Dropdown */
+.mobile-dropdown {
+    position: relative;
+}
+
+.mobile-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #b0b0b0;
+    background: none;
+    border: none;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(229, 9, 20, 0.1);
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.mobile-dropdown-toggle:hover {
+    background: rgba(229, 9, 20, 0.1);
+    color: #E50914;
+    padding-left: 2.5rem;
+}
+
+.mobile-dropdown-toggle i:last-child {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.mobile-dropdown.active .mobile-dropdown-toggle {
+    color: #E50914;
+}
+
+.mobile-dropdown.active .mobile-dropdown-toggle i:last-child {
+    transform: rotate(180deg);
+}
+
+.mobile-dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(229, 9, 20, 0.05);
+    border-left: 3px solid #E50914;
+}
+
+.mobile-dropdown.active .mobile-dropdown-menu {
+    display: flex;
+}
+
+.mobile-dropdown-menu a {
+    padding: 0.8rem 2rem 0.8rem 3rem;
+    border-bottom: 1px solid rgba(229, 9, 20, 0.1);
+    font-size: 0.95rem;
+    color: #a0a0a0;
+}
+
+.mobile-dropdown-menu a:hover {
+    background: rgba(229, 9, 20, 0.08);
+    color: #E50914;
+    padding-left: 3.5rem;
+}
+
+/* Mobile Menu Divider */
+.mobile-menu-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #E50914, transparent);
+    margin: 0.5rem 0;
+}
+
+/* Special Button Styles in Mobile Menu */
+.mobile-login {
+    color: #E50914;
+    font-weight: 700;
+}
+
+.mobile-plan-event {
+    background: #E50914;
+    color: white;
+    font-weight: 700;
+}
+
+.mobile-plan-event:hover {
+    background: #cc0812;
+    padding-left: 2.5rem;
+    border-bottom-color: #cc0812;
+}
+
+.mobile-cart {
+    color: #E50914;
+    font-weight: 700;
+}
+
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .nav-right .btn {
+    display: none;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+    .about-background {
+        padding: 3rem 1.5rem;
+    }
+
+    .about .head {
+        font-size: 2.5rem;
+    }
+
+    .about .para {
+        font-size: 1rem;
+    }
+
+    .main-body {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 2rem 1rem;
+    }
+
+    .left-side-about img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .right-side-about {
+        padding: 1.5rem;
+    }
+
+    .right-side-about h2 {
+        font-size: 1.8rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        gap: 1rem;
+        font-size: 0.95rem;
+    }
+
+    nav .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-right .btn {
+        display: none;
+    }
+
+    .mobile-menu-header {
+        padding: 1.2rem 1.5rem;
+    }
+
+    .mobile-menu-links a {
+        padding: 0.9rem 1.5rem;
+    }
+
+    .mobile-menu-links a:hover,
+    .mobile-menu-links a.active {
+        padding-left: 2rem;
+    }
+
+    .mobile-dropdown-toggle {
+        padding: 0.9rem 1.5rem;
+    }
+
+    .mobile-dropdown-toggle:hover {
+        padding-left: 2rem;
+    }
+
+    .mobile-dropdown-menu a {
+        padding: 0.7rem 1.5rem 0.7rem 2.5rem;
+    }
+
+    .mobile-dropdown-menu a:hover {
+        padding-left: 3rem;
+    }
+}
