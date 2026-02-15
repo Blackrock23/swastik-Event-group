@@ -1,244 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swastik Events – Premium Event Management</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confetti Animation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    body {
+      background-color: #000000;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+    }
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="./swastik.css">
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #ff0000;
+      top: -10px;
+      animation: fall linear infinite;
+      border-radius: 2px;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    /* Different confetti shapes */
+    .confetti.square {
+      border-radius: 0;
+    }
+
+    .confetti.circle {
+      border-radius: 50%;
+    }
+
+    .confetti.triangle {
+      width: 0;
+      height: 0;
+      background-color: transparent;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 10px solid;
+    }
+
+    .confetti.star {
+      width: 0;
+      height: 0;
+      background-color: transparent;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 7px solid;
+      border-top: 7px solid transparent;
+      position: relative;
+    }
+
+    .confetti.star::after {
+      content: '';
+      position: absolute;
+      top: -7px;
+      left: -5px;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 7px solid;
+      border-bottom: 7px solid transparent;
+    }
+
+    /* Netflix-style logo animation */
+    .logo-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      text-align: center;
+    }
+
+    .logo-text {
+      font-family: 'Arial', sans-serif;
+      font-size: 72px;
+      font-weight: 900;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      opacity: 0;
+      transform: scale(0.5);
+      animation: logoPopIn 1.5s ease-out 0.5s forwards;
+      text-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.5),
+        0 0 40px rgba(255, 255, 255, 0.3),
+        0 0 60px rgba(255, 255, 255, 0.2),
+        2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .logo-subtitle {
+      font-family: 'Arial', sans-serif;
+      font-size: 18px;
+      font-weight: 300;
+      color: #e50914;
+      letter-spacing: 4px;
+      margin-top: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: subtitleFadeIn 1.2s ease-out 1.8s forwards;
+      text-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+    }
+
+    @keyframes logoPopIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(30px);
+      }
+      60% {
+        transform: scale(1.1) translateY(-5px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes subtitleFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Glow pulse effect */
+    .logo-text::after {
+      content: 'SWASTIK EVENTS';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      animation: glowPulse 2s ease-in-out 2.5s infinite;
+      text-shadow: 
+        0 0 30px rgba(229, 9, 20, 0.8),
+        0 0 60px rgba(229, 9, 20, 0.6),
+        0 0 90px rgba(229, 9, 20, 0.4);
+    }
+
+    @keyframes glowPulse {
+      0%, 100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.3;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Top Navigation -->
-    <nav class="nav">
-        <div class="nav-left">
-            <div class="logo">
-                <span class="logo-mark"><img src="./photos/logo.jpeg" alt="Swastik-logo"></span>
-                <span class="logo-text">Swastik Events</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="./swastik.html" class="active">Home</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li class="has-dropdown">
-                    <button class="dropdown-toggle">
-                        Services
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="dropdown">
-                        <a href="tel:9769079224" title="9769079224"><i class="fa-solid fa-phone"></i> Contact</a>
-                        <a href="#"><i class="fa-solid fa-headset"></i> Help Desk</a>
-                        <a href="#"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-                    </div>
-                </li>
-                <li><a href="./portfolio/index.html">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-        <div class="nav-right">
-            <a href="./login-signup/login.html" class="btn btn-outline">Login</a>
-            <a href="./make_event/event.html" class="btn btn-primary"><i class="fa-solid fa-cart-arrow-down"></i>Plan Event</a>
-            <button class="icon-btn">
-                <i class="fa-solid fa-cart-arrow-down"></i>
-            </button>
-        </div>
-    </nav>
+  <!-- Netflix-style logo pop-up -->
+  <div class="logo-container">
+    <h1 class="logo-text">Swastik Events</h1>
+    <p class="logo-subtitle">Premium Event Management</p>
+  </div>
+  <script>
+    // Colors for confetti
+    const colors = [
+      '#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', 
+      '#00ffff', '#ff8800', '#8800ff', '#ff0088', '#00ff88',
+      '#ff4444', '#44ff44', '#4444ff', '#ffff44', '#ff44ff'
+    ];
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            
-            <h1>Turn your moments into<br><span>cinematic experiences.</span></h1>
-            <p class="hero-subtitle">
-                Swastik Events curates unforgettable experiences with end‑to‑end planning,
-                premium production and flawless execution – just hit “Play”.
-            </p>
-            <div class="hero-actions">
-                <a href="#featured" class="btn btn-primary hero-btn">
-                    <i class="fa-solid fa-clapperboard"></i>
-                    Explore Events
-                </a>
-                <a href="#categories" class="btn btn-outline hero-btn">
-                    <i class="fa-solid fa-calendar-plus"></i>
-                    Plan a New Event
-                </a>
-            </div>
-            <div class="hero-meta">
-                <span><i class="fa-solid fa-star"></i> 4.9/5 Rated by 500+ clients</span>
-                <span><i class="fa-solid fa-location-dot"></i> Mumbai • Pune • Pan-India</span>
-            </div>
-        </div>
-    </header>
+    // Confetti shapes
+    const shapes = ['square', 'circle', 'triangle', 'star'];
 
-    <!-- Main Content -->
-    <main>
-        <!-- Featured Row -->
-        <section id="featured" class="row-section">
-            <div class="row-header">
-                <h2>Featured Experiences</h2>
-                <button class="row-cta">
-                    View all
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
-            <div class="card-row">
-                <article class="event-card">
-                    <div class="event-thumb wedding"></div>
-                    <div class="event-info">
-                        <h3>Royal Wedding Gala</h3>
-                        <p>Luxurious decor, live music & curated rituals for your big day.</p>
-                        <span class="event-tag">Wedding</span>
-                    </div>
-                </article>
-                <article class="event-card">
-                    <div class="event-thumb corporate"></div>
-                    <div class="event-info">
-                        <h3>Corporate Annual Meet</h3>
-                        <p>Stage, AV, branding & production for high‑impact conferences.</p>
-                        <span class="event-tag">Corporate</span>
-                    </div>
-                </article>
-                <article class="event-card">
-                    <div class="event-thumb concert"></div>
-                    <div class="event-info">
-                        <h3>Live Concert Nights</h3>
-                        <p>Artist management, sound, lights & security for large crowds.</p>
-                        <span class="event-tag">Concert</span>
-                    </div>
-                </article>
-                <article class="event-card">
-                    <div class="event-thumb social"></div>
-                    <div class="event-info">
-                        <h3>Luxury Social Soirée</h3>
-                        <p>Birthdays, anniversaries & private parties with style.</p>
-                        <span class="event-tag">Social</span>
-                    </div>
-                </article>
-            </div>
-        </section>
+    function createConfetti() {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      
+      // Random properties
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const shape = shapes[Math.floor(Math.random() * shapes.length)];
+      const left = Math.random() * 100;
+      const duration = 3 + Math.random() * 4; // 3-7 seconds
+      const delay = Math.random() * 2;
+      const size = 8 + Math.random() * 12; // 8-20px
+      
+      // Apply shape
+      confetti.classList.add(shape);
+      
+      // Apply color
+      if (shape === 'triangle' || shape === 'star') {
+        confetti.style.borderBottomColor = color;
+        if (shape === 'star') {
+          confetti.style.setProperty('--star-color', color);
+        }
+      } else {
+        confetti.style.backgroundColor = color;
+      }
+      
+      // Apply position and animation
+      confetti.style.left = left + '%';
+      confetti.style.width = size + 'px';
+      confetti.style.height = size + 'px';
+      confetti.style.animationDuration = duration + 's';
+      confetti.style.animationDelay = delay + 's';
+      
+      // Add to body
+      document.body.appendChild(confetti);
+      
+      // Remove after animation completes
+      setTimeout(() => {
+        confetti.remove();
+      }, (duration + delay) * 1000);
+    }
 
-        <!-- Categories Row -->
-        <section id="categories" class="row-section">
-            <div class="row-header">
-                <h2>Browse by Category</h2>
-            </div>
-            <div class="card-row small">
-                <article class="pill-card">
-                    <span class="pill-icon"><i class="fa-solid fa-ring"></i></span>
-                    <div>
-                        <h3>Weddings</h3>
-                        <p>Full‑service planning & décor.</p>
-                    </div>
-                </article>
-                <article class="pill-card">
-                    <span class="pill-icon"><i class="fa-solid fa-briefcase"></i></span>
-                    <div>
-                        <h3>Corporate</h3>
-                        <p>Offsites, launches & conferences.</p>
-                    </div>
-                </article>
-                <article class="pill-card">
-                    <span class="pill-icon"><i class="fa-solid fa-music"></i></span>
-                    <div>
-                        <h3>Concerts</h3>
-                        <p>Music festivals & live shows.</p>
-                    </div>
-                </article>
-                <article class="pill-card">
-                    <span class="pill-icon"><i class="fa-solid fa-champagne-glasses"></i></span>
-                    <div>
-                        <h3>Social Events</h3>
-                        <p>Birthdays & milestone parties.</p>
-                    </div>
-                </article>
-                <article class="pill-card">
-                    <span class="pill-icon"><i class="fa-solid fa-school"></i></span>
-                    <div>
-                        <h3>College Fests</h3>
-                        <p>Stage, artists & technicals.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
+    // Create confetti continuously
+    function startConfetti() {
+      // Create initial burst with more confetti
+      for (let i = 0; i < 100; i++) {
+        setTimeout(() => createConfetti(), i * 30);
+      }
+      
+      // Continue creating confetti more frequently (every 100ms instead of 200ms)
+      // And create multiple confetti at once
+      setInterval(() => {
+        // Create 3-5 confetti pieces at once
+        const count = 3 + Math.floor(Math.random() * 3);
+        for (let i = 0; i < count; i++) {
+          createConfetti();
+        }
+      }, 100);
+    }
 
-        <!-- Another  Row -->
-        <section class="row-section">
-            <div class="row-header">
-                <h2>Upcoming Event Slots</h2>
-                <span class="row-subtitle">Block your date before it’s gone</span>
-            </div>
-            <div class="card-row">
-                <article class="event-card compact">
-                    <div class="event-thumb date-slot"></div>
-                    <div class="event-info">
-                        <h3>February Weekends</h3>
-                        <p>Perfect for weddings & socials.</p>
-                        <button class="mini-btn">Check availability</button>
-                    </div>
-                </article>
-                <article class="event-card compact">
-                    <div class="event-thumb date-slot"></div>
-                    <div class="event-info">
-                        <h3>Summer Season</h3>
-                        <p>Ideal for destination events.</p>
-                        <button class="mini-btn">Check availability</button>
-                    </div>
-                </article>
-                <article class="event-card compact">
-                    <div class="event-thumb date-slot"></div>
-                    <div class="event-info">
-                        <h3>Festive Dates</h3>
-                        <p>Diwali, New Year & more.</p>
-                        <button class="mini-btn">Check availability</button>
-                    </div>
-                </article>
-            </div>
-        </section>
-    </main>
+    // Start the confetti animation
+    startConfetti();
 
-    <!-- Footer -->
-    <footer id="contact" class="footer">
-        <div class="footer-columns">
-            <div>
-                <h4>Swastik Events</h4>
-                <p>Premier event management company crafting cinematic experiences for every occasion.</p>
-            </div>
-            <div>
-                <h4>Contact</h4>
-                <p><i class="fa-solid fa-phone"></i> +91 97690 79224</p>
-                <p><i class="fa-solid fa-envelope"></i> Swastikdecore@gmail.com</p>
-                <p><i class="fa-solid fa-location-dot"></i> Mumbai, India</p>
-            </div>
-            <div>
-                <h4>Quick Links</h4>
-                <a href="./about.html">About</a>
-                <a href="./portfolio/portfolio.html">Portfolio</a>
-                <a href="./login-signup/login.html">Client Login</a>
-            </div>
-            <div>
-                <h4>Follow</h4>
-                <div class="social-row">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>© <span id="year"></span> Swastik Events. All rights reserved.</span>
-        </div>
-    </footer>
-
-    <script>
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    // Redirect to swastik.html after 10 seconds
+    setTimeout(() => {
+      window.location.href = './swastik.html';
+    }, 5000);
+  </script>
 </body>
 </html>

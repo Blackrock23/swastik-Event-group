@@ -15,8 +15,8 @@ if (loginForm) {
         // Simple validation
         if (email && password) {
             // In a real app, you'd send this to a backend
-            // For demo purposes, redirect to index.html on successful login
-            window.location.href = '../index.html';
+            // For demo purposes, redirect to swastik.html on successful login
+            window.location.href = '../swastik.html';
         }
     });
 }
