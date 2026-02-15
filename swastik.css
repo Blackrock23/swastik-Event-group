@@ -973,6 +973,9 @@ body.menu-open .mobile-menu-overlay {
     min-height: 320px;
     padding: 70px 12px 30px;
     align-items: flex-end;
+    background-attachment: scroll;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   .hero-content {
@@ -1168,6 +1171,9 @@ body.menu-open .mobile-menu-overlay {
     height: 60vh;
     min-height: 360px;
     padding: 80px 14px 40px;
+    background-attachment: scroll;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   .hero-content {
@@ -1338,6 +1344,9 @@ body.menu-open .mobile-menu-overlay {
     height: 65vh;
     min-height: 400px;
     padding: 90px 16px 50px;
+    background-attachment: scroll;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   .hero-content {
