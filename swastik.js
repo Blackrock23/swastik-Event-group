@@ -65,4 +65,30 @@ document.addEventListener('keydown', function(event) {
 });
 
 // Set current year in footer
-document.getElementById('year').textContent = new Date().getFullYear();
+if (document.getElementById('year')) {
+    document.getElementById('year').textContent = new Date().getFullYear();
+}
+
+// Check if user is logged in
+function checkLoginStatus() {
+    const currentUser = localStorage.getItem('currentUser');
+    if (currentUser) {
+        const user = JSON.parse(currentUser);
+        if (user.loggedIn) {
+            // User is logged in - you can display user info or add logout button
+            console.log('User logged in:', user.email);
+            return user;
+        }
+    }
+    return null;
+}
+
+// Logout function
+function logout() {
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('rememberMe');
+    window.location.href = './login-signup/login.html';
+}
+
+// Check login status on page load
+checkLoginStatus();
