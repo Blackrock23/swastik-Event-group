@@ -928,6 +928,14 @@ body.menu-open .mobile-menu-overlay {
     font-size: 0.65rem;
   }
 
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .nav-right .btn {
+    display: none;
+  }
+
   .logo-text {
     display: none;
   }
@@ -1305,6 +1313,10 @@ body.menu-open .mobile-menu-overlay {
   }
 
   .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .nav-right .btn {
     display: none;
   }
 

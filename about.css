@@ -236,11 +236,17 @@ footer p {
     padding: 0.5rem;
     transition: all 0.3s ease;
     z-index: 999;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .mobile-menu-toggle:hover {
     color: #ff6666;
     transform: scale(1.1);
+    background: rgba(229, 9, 20, 0.1);
 }
 
 /* Mobile Menu Overlay */
@@ -464,17 +470,23 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: block;
-    }
+    
+  .mobile-menu-toggle {
+    display: flex;
+  }
 
-    .nav-links {
-        display: none;
-    }
+  .nav-right .btn {
+    display: none;
+  }
 
-    .nav-right {
-        display: none;
-    }
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
 
     .about-background {
         padding: 3rem 1.5rem;
@@ -532,6 +544,11 @@ footer p {
     }
 
     .nav-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-right .btn {
         display: none;
     }
 
